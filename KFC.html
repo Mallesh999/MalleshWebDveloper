@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC</title>
+    <link rel="icon" href="../assetsForImage/KfcBucket.jpg">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <!-- User Defined Script -->
+    <script>
+        function placeOrder(){
+            document.getElementById("lblName").innerHTML = document.getElementById("txtUserName").value; //Here Getting data 
+            document.getElementById("lblMobileNo").innerHTML = document.getElementById("txtUserMobileNo").value;
+            document.getElementById("lblAddress").innerHTML = document.getElementById("txtUserAddress").value;
+
+            var mealName ="";
+            var mealCost =0;
+            var adonName ="";
+            var adonCost =0;
+           
+            var optBurger = document.getElementById("optBurger");
+            var optRoller = document.getElementById("optRoller");
+
+            var optWings = document.getElementById("optWings");
+            var optKrusher = document.getElementById("optKrusher");
+
+                //forward jump
+                if(optBurger.checked){
+                        mealName = optBurger.value;
+                        mealCost = 150;
+                }
+
+                if(optRoller.checked){
+                        mealName = optRoller.value;
+                        mealCost = 100;
+                }
+                
+                if(optWings.checked){
+                    adonName += optWings.value+"<br>";
+                    adonCost = 90;
+                    mealCost = mealCost + adonCost;
+                }
+                if(optKrusher.checked){
+                    adonName += optKrusher.value+"<br>";
+                    adonCost = 70;
+                    mealCost = mealCost + adonCost;
+                }
+
+                document.getElementById("lblMeal").innerHTML = mealName;
+                document.getElementById("lblAdons").innerHTML = adonName;
+
+                document.getElementById("lblAmount").innerHTML ="&#8377;"+ mealCost;
+                }
+    </script>
+</head>
+<body class="container-fluid">
+    <header>
+        <img src="../assetsForImage/KFC.jpg" alt="" class="w-100" height="320px">
+    </header>
+    <div class="accordion mt-3">
+        <!-- Item one Starts from Here...  -->
+        <div class="accordion-item ">
+            <h1 class="accordion-header d-grid">
+                <button type="button" class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#myCustomer">
+                        Customer info
+                </button>
+            </h1>
+        </div>
+        <div class="collapse accordion-collapse" id="myCustomer">
+            <div class="accordion-body">
+                <dl>
+                    <dt>Customer Name :</dt>
+                    <dd>
+                        <input type="text" class="form-control" id="txtUserName">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>Customer Mobile No :</dt>
+                    <dd>
+                        <input type="tel" class="form-control" id="txtUserMobileNo">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>Customer Address :</dt>
+                    <dd>
+                        <textarea class="form-control" id="txtUserAddress"></textarea>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- Item one ends Here...  -->
+
+    <!-- Item two starts from Here...  -->
+    <div class="accordion mt-3">
+        <div class="accordion-item">
+            <h1 class="accordion-header d-grid">
+                <button type="button" class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#myMeal">
+                    Select Your Meal
+                </button>
+            </h1>
+        </div>
+        <div class="collapse accordion-collapse" id="myMeal">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="../assetsForImage/Burger.jpg" alt="" height="200" width="200">
+                            </div>
+                            <div class="card-footer">
+                                <input type="radio" name="item" id="optBurger" value="OMG Burger">&nbsp;&nbsp;OMG Burger &#8377;150/-
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="../assetsForImage/Roller.jpg" alt="" height="200" width="200">
+                            </div>
+                            <div class="card-footer">
+                                <input type="radio" name="item" id="optRoller" value="OMG Roller">&nbsp;&nbsp;OMG Roller &#8377;100/-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Item two Ends Here...  -->
+
+    <!-- Item Three starts from Here...  -->
+    <div class="accordion mt-3">
+        <div class="accordion-item">
+            <h1 class="accordion-header d-grid">
+                <button type="button" class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#myAdOns">
+                    Choose Your Ad-On's
+                </button>
+            </h1>
+            <div class="collapse accordion-collapse" id="myAdOns">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col text-center">   
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../assetsForImage/KfcBucket.jpg" alt="" height="200" width="350">
+                                </div>
+                                <div class="card-footer">
+                                    <input type="checkbox"  id="optWings" value="Hot Wings">&nbsp;&nbsp;Hot Wings &#8377;90/-
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../assetsForImage/Krusher.jpg" alt="" height="200" width="200">
+                                </div>
+                                <div class="card-footer">
+                                    <input type="checkbox" id="optKrusher" value="Krusher Brownie">&nbsp;&nbsp; Krusher Brownie &#8377;70/-
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Item Three ends Here...  -->
+
+    <!-- Proceeding Proccess Starts From Here... -->
+    <div class="accordion mt-3">
+        <div class="accordion-item">
+            <h1 class="accordion-header d-grid">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal" onclick="placeOrder()">
+                        Place Order
+                </button>
+            </h1>
+        </div>
+        <div class="accordion-body">
+            <div class="modal" data-bs-backdrop="static" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h1 class="text-danger">Bill Summary</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>  
+                        <div class="modal-body">
+                            <table class="table table-bordered table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <td id="lblName"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Mobile No</th>
+                                        <td id="lblMobileNo"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Address</th>
+                                        <td id="lblAddress"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Selected Meal</th>
+                                        <td id="lblMeal"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Selected Ad-On's</th>
+                                        <td id="lblAdons"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bill Amount</th>
+                                        <td id="lblAmount"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-primary" data-bs-dismiss="modal">Proceed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Proceeding Proccess Ends Here... -->
+</body>
+</html>
