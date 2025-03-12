@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body class="container mt-2">
+    <div class="carousel slide" data-bs-ride="carousel" id="myCarousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../assetsForImage/download1.jpg" class="w-100 d-block" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="../assetsForImage/download2.jpg" class="w-100 d-block" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="../assetsForImage/download3.jpg" class="w-100 d-block" alt="">
+            <!-- carousel caption Starts here -->
+            <div class="carousel-caption">
+                <h1 class="text-white">Carousel Caption</h1>
+                <button type="button" class="btn btn-primary">Sign Up</button>
+            </div>
+           <!-- carousel caption ends here -->
+            </div>
+        </div> 
+        <!-- carousel controls starts here -->
+          <button type="button" class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#myCarousel">
+          <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button type="button" class="carousel-control-next" data-bs-slide="next" data-bs-target="#myCarousel">
+          <span class="carousel-control-next-icon"></span>
+          </button>
+          <!-- carousel controls ends here -->
+
+          <!-- carousel indicators starts here -->
+           <div class="carousel-indicators">
+            <button type="button" class="active" data-bs-slide-to="0" data-bs-target="#myCarousel"></button>
+            <button type="button" data-bs-slide-to="1" data-bs-target="#myCarousel"></button>
+            <button type="button" data-bs-slide-to="2" data-bs-target="#myCarousel"></button>
+           </div>
+           <!-- carousel indicators ends here -->
+    </div> 
+</body>
+</html>
